@@ -4,7 +4,6 @@ class ChatPage extends StatefulWidget {
   const ChatPage({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _ChatPageState createState() => _ChatPageState();
 }
 
@@ -21,7 +20,7 @@ class _ChatPageState extends State<ChatPage> {
 
   final TextEditingController _messageController = TextEditingController();
 
-  // Function to handle sending messages
+  // Fungsi untuk mengirim pesan
   void _sendMessage() {
     String text = _messageController.text.trim();
     if (text.isNotEmpty) {
@@ -35,17 +34,7 @@ class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Customer Support",
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-            centerTitle: true,
-        backgroundColor: const Color(0xFF001F3F), // Steel Blue for the app bar
-        elevation: 0, // Flat app bar for a modern look
-        iconTheme: const IconThemeData(
-          color: Colors.white, // Change the back button color here
-          
-        ),
-      ),
+      appBar: _buildAppBar(),
       body: Column(
         children: [
           Expanded(
@@ -63,7 +52,23 @@ class _ChatPageState extends State<ChatPage> {
     );
   }
 
-  // Widget to build individual chat message bubbles
+  // AppBar widget terpisah untuk keteraturan
+  AppBar _buildAppBar() {
+    return AppBar(
+      title: const Text(
+        "Customer Support",
+        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+      ),
+      centerTitle: true,
+      backgroundColor: const Color(0xFF001F3F), // Steel Blue untuk AppBar
+      elevation: 0,
+      iconTheme: const IconThemeData(
+        color: Colors.white, // Warna tombol back
+      ),
+    );
+  }
+
+  // Widget untuk menampilkan tiap pesan chat
   Widget _buildMessageItem(Map<String, dynamic> message) {
     bool isMe = message['isMe'];
     return Align(
@@ -73,10 +78,9 @@ class _ChatPageState extends State<ChatPage> {
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
         decoration: BoxDecoration(
           color: isMe
-              ? const Color(0xFF001F3F)
-              : const Color(
-                  0xFFD3D3D3), // Bright Green for sent messages and Light Gray for received messages
-          borderRadius: BorderRadius.circular(20), // More rounded corners
+              ? const Color(0xFF001F3F) // Steel Blue untuk pesan saya
+              : const Color(0xFFD3D3D3), // Light Gray untuk pesan lain
+          borderRadius: BorderRadius.circular(20),
           boxShadow: const [
             BoxShadow(
               color: Colors.black26,
@@ -109,7 +113,7 @@ class _ChatPageState extends State<ChatPage> {
     );
   }
 
-  // Widget to build the text input area
+  // Widget untuk bagian input pesan
   Widget _buildMessageInput() {
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -125,20 +129,23 @@ class _ChatPageState extends State<ChatPage> {
                   borderSide: BorderSide.none,
                 ),
                 filled: true,
-                fillColor: Colors.grey[200], // Light gray for the input field
+                fillColor: Colors.grey[200], // Light gray untuk input field
                 contentPadding: const EdgeInsets.symmetric(
-                    vertical: 10,
-                    horizontal: 15), // More padding for a spacious feel
+                  vertical: 10,
+                  horizontal: 15,
+                ),
               ),
             ),
           ),
-          const SizedBox(width: 8), // Space between input and send button
+          const SizedBox(width: 8),
           IconButton(
             onPressed: _sendMessage,
-            icon: const Icon(Icons.send,
-                color: Color(0xFF001F3F)), // Steel Blue for the send button
-            padding: EdgeInsets.zero, // Remove default padding
-            constraints: const BoxConstraints(), // Remove constraints for icon button
+            icon: const Icon(
+              Icons.send,
+              color: Color(0xFF001F3F), // Steel Blue untuk tombol kirim
+            ),
+            padding: EdgeInsets.zero,
+            constraints: const BoxConstraints(),
           ),
         ],
       ),
