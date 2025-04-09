@@ -1,16 +1,63 @@
-# ui_ecommerce
+# 🛍 Avest E-Commerce - Flutter UI
 
-A new Flutter project.
+## 🛠 Tech Stack
 
-## Getting Started
+**Frontend**:
+- Flutter 3.22
+- Dart 3.2
+- Provider (State Management)
+- Flutter Animations
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🌟 Key Features
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- 🏠 Home Page with Product Categories
+- 🛒 Shopping Cart System
+- 💬 Seller Chat Interface
+- 🎯 Custom Bottom Navigation Bar
+- 📱 Responsive Mobile UI
+- 🎨 Custom Themes & Animations
+- 📦 State Management with Provider
+
+## 📂 Project Structure
+
+```
+avest_ecommerce/
+├── lib/
+│   ├── main.dart
+│   ├── pages/
+│   │   ├── home_page.dart
+│   │   ├── cart_page.dart
+│   │   ├── chat_page.dart
+│   │   ├── items_page.dart
+│   │   ├── message_list_page.dart
+│   │   ├── profile_page.dart
+│   │   ├── login_page.dart
+│   │   └── register_page.dart
+│   └── widgets/
+│       ├── cart_app_bar.dart
+│       ├── cart_bottom_navigator.dart
+│       ├── cart_items_examples.dart
+│       ├── categories_widget.dart
+│       ├── home_app_bar.dart
+│       ├── item_app_bar.dart
+│       └── items_widget.dart
+├── assets/images/
+│   ├── 1.jpg
+│   ├── 2.jpg
+│   ├── 3.jpg
+│   └── 4.jpg
+└── ...
+```
+
+## 🖥 Local Setup
+
+```bash
+flutter pub get
+flutter run
+```
+
+## 👨💻 Author
+- GitHub: [@hashiifabdillah](https://github.com/hashiifab)
+- LinkedIn: [Hashiif Abdillah](https://www.linkedin.com/in/hashiif-abdillah-665373297/)

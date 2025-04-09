@@ -1,0 +1,2 @@
+/Users/hashiifabdillah/Documents/IT/my_project/apps/Avest_Ecommerce_UI/android/app/.cxx/Debug/2q1m4t64/x86/CMakeFiles/rebuild_cache.dir
+/Users/hashiifabdillah/Documents/IT/my_project/apps/Avest_Ecommerce_UI/android/app/.cxx/Debug/2q1m4t64/x86/CMakeFiles/edit_cache.dir
